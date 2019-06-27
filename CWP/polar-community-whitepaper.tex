@@ -1,0 +1,160 @@
+\documentclass[10pt,letterpaper,draft]{article}
+
+\usepackage{wrapfig}
+\usepackage[hmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[font={small,it}]{caption}
+\usepackage[outercaption]{sidecap}    
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage[compact]{titlesec}
+
+\usepackage{soul}
+\usepackage{color}
+\usepackage{srcltx}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\newif\ifdraft
+\drafttrue
+\ifdraft
+ \newcommand{\jhanote}[1]{ \textcolor{red}  {***SJ:#1}\xspace}
+ \newcommand{\note}[1]{ \textcolor{blue}  {***Note:#1}\xspace}
+\else
+ \newcommand{\jhanote}[1]{}
+ \newcommand{\note}[1]{}
+\fi
+
+% \usepackage[firstpage]{draftwatermark}
+% \SetWatermarkLightness{0.66}
+% \SetWatermarkScale{1.2}
+%\usepackage{draftwatermark}
+
+\titlespacing{\section}{0pt}{*1}{*1}
+\titlespacing{\subsection}{0pt}{*1}{*0}
+\titlespacing{\subsubsection}{0pt}{*1}{*0}
+\renewcommand{\rmdefault}{phv} 
+\renewcommand{\sfdefault}{phv} 
+\newcommand*{\Fig}[1]{Figure~\ref{#1}}
+\newcommand*{\Figs}[1]{Figures~\ref{#1}}
+\newcommand*{\Table}[1]{Table~\ref{#1}}
+\newcommand*{\Tables}[1]{Tables~\ref{#1}}
+\newcommand*{\Eqr}[1]{(\ref{#1})}
+\newcommand*{\Eq}[1]{Equation~(\ref{#1})}
+\newcommand*{\Eqs}[1]{Equations~(\ref{#1})}
+\newcommand*{\Sect}[1]{Section~\ref{#1}}
+\newcommand*{\Sects}[1]{Sections~\ref{#1}}
+\newcommand*{\Alg}[1]{Algorithm~\ref{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NSF Commands                                                         %%
+%%%%%%%%%%% EXACT 1in MARGINS %%%%%%                                    %%
+% \setlength{\textwidth}{6.5in}     %%                                    %%
+% \setlength{\oddsidemargin}{0in}   %% (It is recommended that you        %%
+% \setlength{\evensidemargin}{0in}  %%  not change these parameters,      %%
+% \setlength{\textheight}{8.5in}    %%  at the risk of having your        %%
+% \setlength{\topmargin}{0in}       %%  proposal dismissed on the basis   %%
+% \setlength{\headheight}{0in}      %%  of incorrect formatting!!!)       %%
+% \setlength{\headsep}{0in}         %%                                    %%
+% \setlength{\footskip}{.5in}       %%                                    %%
+%\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
+%\newcommand{\required}[1]{\subsection*{\hfil #1\hfil}}                 %%
+%\renewcommand{\refname}{\hfil References Cited\hfil}                   %%
+%\bibliographystyle{plain}                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\date{}
+
+\begin{document}
+
+\title{\bf }
+
+\maketitle
+
+\vspace{-0.9in}
+
+%\usepackage{hyperref}
+% Top Matter
+%\pretolerance 9000
+%\pagestyle{empty}
+% \thispagestyle{empty}
+% \begin{center}
+% \Large
+% Project Summary
+% \end{center}
+
+%\newpage
+
+% \thispagestyle{empty}
+% \setcounter{tocdepth}{4}
+% \normalsize
+% \tableofcontents
+% \normalsize
+% \newpage
+
+% \setcounter{page}{1}
+% \setcounter{section}{0}
+
+\renewcommand{\thepage}{\arabic{page}}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+\begin{center} 
+
+\vspace{0.25in}
+\large Shantenu Jha$^{*}$\footnote{shantenu.jha@rutgers.edu} and 
+       Heather Lynch and 
+       Allen Pope    and
+       Jane Wyngaard \\
+
+\small {\it $^*$ Electrical and Computer Engineering, Rutgers University} \\
+\small {\it $^+$ Molecular Physiology and Biological Physics and Biomedical
+  Engineering, University of Virginia} \\
+
+\vspace{0.25in}
+
+\large Abstract
+
+\end{center} {\it  The NSF funded Polar Computing Research Coordination Network NSF 1542110 (http://polar-computing.org) was tasked in 2015 with analyzing opportunities and barriers in the uptake of high-performance \& distributed computing for polar science. Specifically the charge of the RCN was to: (i) Identify opportunities for, and barriers to, greater uptake of High-Performance and Distributed Cyberinfrastructure by polar sciences, (ii) Ensure that plans and designs for new and existing NSF-funded cyberinfrastructure efforts are cognizant of the needs of the Polar Science community, and (iii) Understand how best to educate a new generation of polar scientists in the skills needed to realize the opportunities and potential of HPDC. As the RCN draws to a close, this community paper analyzes the state-of-play along these three dimensions.
+}
+
+\vspace{0.15in}
+
+\subsection*{Introduction}
+
+Climate change is having and will have a vast impact on the polar regions including sea ice retreat, mass loss from the Greenland and Antarctic ice sheets, ecosystem disruption and change, and retreat of mountain glaciers, not to mention additional impacts on precipitation regimes, extreme events, and other key environmental processes. A deeper understanding of these changes requires enormous quantities of diverse observational data (e.g. from satellite and airborne imagery to automated field observations), the ability to integrate these streams of data into detailed computer models, and sophisticated means of analysis and visualizing emergent patterns.  Efficient analysis of the increasingly large and complex volumes of data produced by the Intergovernmental Panel on Climate Change (IPCC) studies and others require greater sophistication of computing, visualization, and data management. These are emblematic of the challenges required to solve these and other key problems in the polar sciences, for which the efficient utilization of high-performance and distributed computing has become increasingly critical to continued scientific advancement.
+
+In addition to scaling and increasing the sophistication of existing approaches, there are unprecedented new opportunities and fundamentally different solutions emerging. It is no exaggeration that the onset of Machine Learning and other Artificial Intelligence methods have the potential to radically change the state-of-practice of Polar Sciences, as well as many observational data rich domain sciences.  These new opportunities in turn require the full utilization of existing and emerging high-performance computing capabilities. 
+
+Prior to the inception of a Research Coordination Network (RCN) on Polar Computing, at least two workshops had demonstrated the need for advanced cyberinfrastructure [28] and high-performance and distributed computing (HPDC) to solve different polar scientific problems [Ref 2, 32]. The penetration of HPDC in polar science has been low relative to other domains and has not increased over time in proportion to the opportunities. For example, there were no polar science projects in the XRAC allocation portfolio at the time the RCN was commissioned. In response, this National Science Foundation funded Research Coordination Network (RCN) on Polar Computing (led by Jha, Lynch, Wyngaard, Nabrzyski, \& Yarmey/Pope http://polar-computing.org) was tasked with identifying opportunities, structural barriers, and proposals for how to overcome these barriers to bridge the current gap between the polar science and HPDC communities.
+
+The RCN organized several stand alone workshops and hackathons, organized special sessions at relevant workshops/conferences (e.g., XSEDE 2016, SCAR 2016, Polar 2018) and participated in other community activities (e.g., other EarthCube and NSF organized meetings). It has identified several bottlenecks that currently limit the uptake of HPDC in the polar sciences. Whereas there are “bleeding edge” aspects of HPDC that are technically demanding and will always remain difficult to use, there remains a perception that initial access and basic utilization remains a fundamental barrier due to inadequate training and training opportunities for domain scientists. To this end, the RCN has undertaken several community-wide education and training activities, some quite general (e.g., using a shell environment) and some more narrowly targeted (e.g., HPC tools for high-resolution imagery), that in aggregate provide a solid foundation for future progress.
+
+As the Arctic DEM and Reference Elevation Model of Antarctica (REMA) projects [27] demonstrate, there are clearly some polar science projects at the vanguard of using HPDC. These and other projects [Ref 17] demonstrate the potential impact, but such success are just emerging from the community. Beyond large scale projects like the ArcticDEM, polar science is also characterized by many, more highly focused projects often referred to as the “long tail of science”. These projects may be narrower in scope they can require vast quantities of HPC, storage and data. Whereas the RCN focused on ensuring that HPDC infrastructure works for projects of all sizes and scope, it primarily focused on identifying how to increase HPDC penetration across a larger swath of the polar science community. 
+
+
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+%\noindent\rule{16.5cm}{0.6pt}
+
+\hspace{1.5cm}\rule{13.0cm}{0.8pt}
+
+\vspace{0.5cm}
+
+{\noindent \bf \small Acknowledgements:} 
+
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
